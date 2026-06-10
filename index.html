@@ -511,7 +511,7 @@ let usuarios = {
 let colaboradoresEmails = [];
 let currentUser = null;
 
-// ─── FECHA ───
+// ─── FECHA Y HORA ───
 function updateFecha() {
   const d = new Date();
   const dias = {es:['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'],en:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],fr:['Dim','Lun','Mar','Mer','Jeu','Ven','Sam']};
@@ -519,7 +519,17 @@ function updateFecha() {
   const lang = currentLang||'es';
   document.getElementById('fechaHoy').textContent = `${dias[lang][d.getDay()]} ${d.getDate()} ${meses[lang][d.getMonth()]} ${d.getFullYear()}`;
 }
-updateFecha(); setInterval(updateFecha,60000);
+
+function updateHora() {
+  const n = new Date();
+  const h = document.getElementById("horaHoy");
+  if(h) h.textContent = n.toLocaleTimeString("es-AR");
+}
+
+updateFecha(); 
+updateHora();
+setInterval(updateFecha, 60000);
+setInterval(updateHora, 1000);
 
 // ─── IDIOMAS ───
 const i18n = {
@@ -733,7 +743,5 @@ function closeLightbox(){document.getElementById('lightbox').classList.remove('o
 // ─── TOAST ───
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.style.display='block';setTimeout(()=>{t.style.display='none';},2800);}
 </script>
-
-<script>setInterval(function(){var n=new Date();var h=document.getElementById("horaHoy");if(h)h.textContent=n.toLocaleTimeString("es-AR");},1000);</script>
 </body>
 </html>
