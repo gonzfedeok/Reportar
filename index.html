@@ -264,7 +264,7 @@
             <input type="text" placeholder="Patente" style="width:110px;padding:9px 10px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;background:var(--bg);"/>
           </div>
         </div>
-        <button onclick="agregarVehiculo()" style="font-size:12px;color:var(--azul2);background:none;border:1px dashed var(--azul2);border-radius:var(--radius-sm);padding:6px 12px;cursor:pointer;">+ Agregar vehículo</button>
+<button type="button" onclick="agregarVehiculo()" style="font-size:12px;color:var(--azul2);background:none;border:1px dashed var(--azul2);border-radius:var(--radius-sm);padding:6px 12px;cursor:pointer;">+ Agregar vehículo</button>
       </div>
       <div class="field"><label>Heridos</label><select><option>No reportados</option><option>A confirmar</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5 o más</option></select></div>
       <div class="field"><label>Fallecidos</label><select><option>No reportados</option><option>A confirmar</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5 o más</option></select></div>
@@ -279,7 +279,7 @@
         <div class="media-preview" id="prev-auto"></div>
         <div class="gps-result" id="gps-auto"></div>
       </div>
-      <button class="submit-btn sub-automotor" onclick="enviar('automotor','auto-lugar','auto-resena')"><i class="ti ti-send" style="margin-right:6px"></i>Enviar denuncia</button>
+      <button type="button" class="submit-btn sub-automotor" onclick="enviar('automotor','auto-lugar','auto-resena')"><i class="ti ti-send" style="margin-right:6px"></i>Enviar denuncia</button>
     </div>
 
     <!-- FORM AERONAUTICO -->
@@ -307,8 +307,7 @@
         <div class="media-preview" id="prev-aero"></div>
         <div class="gps-result" id="gps-aero"></div>
       </div>
-      <button class="submit-btn sub-aeronautico" onclick="enviar('aeronautico','aero-lugar','aero-resena')"><i class="ti ti-send" style="margin-right:6px"></i>Enviar denuncia</button>
-    </div>
+<button type="button" class="submit-btn sub-aeronautico" onclick="enviar('aeronautico','aero-lugar','aero-resena')"><i class="ti ti-send" style="margin-right:6px"></i>Enviar denuncia</button>    </div>
 
     <!-- FORM MARITIMO -->
     <div class="form-container" id="form-maritimo">
@@ -335,8 +334,7 @@
         <div class="media-preview" id="prev-mar"></div>
         <div class="gps-result" id="gps-mar"></div>
       </div>
-      <button class="submit-btn sub-maritimo" onclick="enviar('maritimo','mar-lugar','mar-resena')"><i class="ti ti-send" style="margin-right:6px"></i>Enviar denuncia</button>
-    </div>
+<button type="button" class="submit-btn sub-maritimo" onclick="enviar('maritimo','mar-lugar','mar-resena')"><i class="ti ti-send" style="margin-right:6px"></i>Enviar denuncia</button>    </div>
 
     <!-- FORM FERROVIARIO -->
     <div class="form-container" id="form-ferroviario">
@@ -363,7 +361,7 @@
         <div class="media-preview" id="prev-ferro"></div>
         <div class="gps-result" id="gps-ferro"></div>
       </div>
-      <button class="submit-btn sub-ferroviario" onclick="enviar('ferroviario','ferro-lugar','ferro-resena')"><i class="ti ti-send" style="margin-right:6px"></i>Enviar denuncia</button>
+<button type="button" class="submit-btn sub-ferroviario" onclick="enviar('ferroviario','ferro-lugar','ferro-resena')"><i class="ti ti-send" style="margin-right:6px"></i>Enviar denuncia</button> 
     </div>
   </div>
 
@@ -403,13 +401,13 @@
     <div class="qr-box">
       <h3><i class="ti ti-qrcode" style="margin-right:6px"></i>Compartir ReportAR</h3>
       <p data-i18n="qr_desc">Escaneá el QR o compartí el link para denunciar desde tu celular.</p>
-      <div class="qr-inner"><div id="qrCanvas"></div></div><br>
+      <div class="qr-inner"><div id="qrCanvas"></div></div>
       <div class="qr-url">reportar.netlify.app</div>
       <div class="qr-phone"><i class="ti ti-phone"></i> 0800-333-0689</div>
       <div class="qr-options">
-        <button class="qr-opt" onclick="copiarLink()"><i class="ti ti-copy"></i> Copiar</button>
-        <button class="qr-opt" onclick="compartirWsp()"><i class="ti ti-brand-whatsapp"></i> WhatsApp</button>
-        <button class="qr-opt" onclick="descargarQR()"><i class="ti ti-download"></i> Descargar QR</button>
+<button type="button" class="qr-opt" onclick="copiarLink()"><i class="ti ti-copy"></i> Copiar</button>
+<button type="button" class="qr-opt" onclick="compartirWsp()"><i class="ti ti-brand-whatsapp"></i> WhatsApp</button>
+        <button type="button" class="qr-opt" onclick="descargarQR()"><i class="ti ti-download"></i> Descargar QR</button>
       </div>
     </div>
   </div>
@@ -421,12 +419,12 @@
         <h3><i class="ti ti-shield-lock"></i> Acceso solo para administradores</h3>
         <input type="text" id="admin-user" placeholder="Usuario (email)"/>
         <input type="password" id="admin-pass" placeholder="Contraseña"/>
-        <button onclick="loginAdmin()"><i class="ti ti-login" style="margin-right:6px"></i>Ingresar</button>
+        <button type="button" onclick="loginAdmin()"><i class="ti ti-login"></i>Ingresar</button>
       </div>
     </div>
     <div id="admin-panel" style="display:none">
       <div class="admin-tabs">
-        <button class="admin-tab active" onclick="showAdminTab('sucesos',this)"><i class="ti ti-list"></i> Sucesos</button>
+       <button type="button" class="admin-tab active" onclick="showAdminTab('sucesos',this)"><i class="ti ti-list"></i> Sucesos</button>
         <button class="admin-tab" onclick="showAdminTab('colaboradores',this)" id="btn-tab-colab"><i class="ti ti-users"></i> Colaboradores</button>
       </div>
       <div id="atab-sucesos">
