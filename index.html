@@ -529,8 +529,6 @@ function updateHora() {
   if(h) h.textContent = n.toLocaleTimeString("es-AR");
 }
 
-const i18n = {
-
 // ─── IDIOMAS ───
 const i18n = {
   es:{subtitle:'Plataforma de denuncia ciudadana de sucesos',nav_report:'Denunciar',nav_feed:'Sucesos',btn_wsp:'WhatsApp',select_mode:'Seleccioná el modo del suceso:',cat_auto:'Automotor',cat_auto_sub:'Accidentes viales',cat_aero:'Aeronáutico',cat_aero_sub:'Accidentes aéreos',cat_mar:'Marítimo / Fluvial',cat_mar_sub:'Embarcaciones',cat_ferro:'Ferroviario',cat_ferro_sub:'Trenes',feed_notice:'Solo se muestran denuncias aprobadas por moderadores.',qr_desc:'Escaneá el QR o compartí el link para denunciar desde tu celular.',footer_disclaimer:'Página no oficial, a fines estadísticos.',footer_thanks:'Gracias por su colaboración.'},
@@ -538,7 +536,33 @@ const i18n = {
   fr:{subtitle:"Plateforme citoyenne de signalement d'incidents",nav_report:'Signaler',nav_feed:'Incidents',btn_wsp:'WhatsApp',select_mode:"Sélectionnez le mode:",cat_auto:'Automobile',cat_auto_sub:'Accidents routiers',cat_aero:'Aéronautique',cat_aero_sub:'Accidents aériens',cat_mar:'Maritime',cat_mar_sub:'Navires',cat_ferro:'Ferroviaire',cat_ferro_sub:'Trains',feed_notice:'Seuls les incidents approuvés sont affichés.',qr_desc:'Scannez le QR ou partagez le lien pour signaler.',footer_disclaimer:'Page non officielle à fins statistiques.',footer_thanks:'Merci de votre collaboration.'}
 };
 let currentLang='es';
-updateFecha();
+function updateFecha() {
+  const d = new Date();
+
+  const dias = {
+    es:['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'],
+    en:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
+    fr:['Dim','Lun','Mar','Mer','Jeu','Ven','Sam']
+  };
+
+  const meses = {
+    es:['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+    en:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+    fr:['Jan','Fév','Mar','Avr','Mai','Jun','Jul','Aoû','Sep','Oct','Nov','Déc']
+  };
+
+  const lang =
+    (typeof currentLang !== 'undefined')
+      ? currentLang
+      : 'es';
+
+  const fecha = document.getElementById('fechaHoy');
+
+  if(fecha){
+    fecha.textContent =
+      `${dias[lang][d.getDay()]} ${d.getDate()} ${meses[lang][d.getMonth()]} ${d.getFullYear()}`;
+  }
+};
 updateHora();
 setInterval(updateFecha, 60000);
 setInterval(updateHora, 1000);
