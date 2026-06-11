@@ -516,7 +516,10 @@ function updateFecha() {
   const d = new Date();
   const dias = {es:['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'],en:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],fr:['Dim','Lun','Mar','Mer','Jeu','Ven','Sam']};
   const meses = {es:['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],en:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],fr:['Jan','Fév','Mar','Avr','Mai','Jun','Jul','Aoû','Sep','Oct','Nov','Déc']};
-  const lang = currentLang||'es';
+  const lang =
+(typeof currentLang !== 'undefined')
+ ? currentLang
+ : 'es';
   document.getElementById('fechaHoy').textContent = `${dias[lang][d.getDay()]} ${d.getDate()} ${meses[lang][d.getMonth()]} ${d.getFullYear()}`;
 }
 
@@ -526,10 +529,7 @@ function updateHora() {
   if(h) h.textContent = n.toLocaleTimeString("es-AR");
 }
 
-updateFecha(); 
-updateHora();
-setInterval(updateFecha, 60000);
-setInterval(updateHora, 1000);
+const i18n = {
 
 // ─── IDIOMAS ───
 const i18n = {
@@ -538,6 +538,10 @@ const i18n = {
   fr:{subtitle:"Plateforme citoyenne de signalement d'incidents",nav_report:'Signaler',nav_feed:'Incidents',btn_wsp:'WhatsApp',select_mode:"Sélectionnez le mode:",cat_auto:'Automobile',cat_auto_sub:'Accidents routiers',cat_aero:'Aéronautique',cat_aero_sub:'Accidents aériens',cat_mar:'Maritime',cat_mar_sub:'Navires',cat_ferro:'Ferroviaire',cat_ferro_sub:'Trains',feed_notice:'Seuls les incidents approuvés sont affichés.',qr_desc:'Scannez le QR ou partagez le lien pour signaler.',footer_disclaimer:'Page non officielle à fins statistiques.',footer_thanks:'Merci de votre collaboration.'}
 };
 let currentLang='es';
+updateFecha();
+updateHora();
+setInterval(updateFecha, 60000);
+setInterval(updateHora, 1000);
 function toggleLangMenu(){ document.getElementById('langMenu').classList.toggle('open'); }
 document.addEventListener('click',e=>{ if(!e.target.closest('.lang-btn')&&!e.target.closest('.lang-menu')) document.getElementById('langMenu').classList.remove('open'); });
 function setLang(lang,el){
