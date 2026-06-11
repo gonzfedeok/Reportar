@@ -516,8 +516,8 @@ function updateFecha() {
   const d = new Date();
   const dias = {es:['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'],en:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],fr:['Dim','Lun','Mar','Mer','Jeu','Ven','Sam']};
   const meses = {es:['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],en:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],fr:['Jan','Fév','Mar','Avr','Mai','Jun','Jul','Aoû','Sep','Oct','Nov','Déc']};
-  const lang =
-(typeof currentLang !== 'undefined')
+const lang = currentLang || 'es'
+  (typeof currentLang !== 'undefined')
  ? currentLang
  : 'es';
   document.getElementById('fechaHoy').textContent = `${dias[lang][d.getDay()]} ${d.getDate()} ${meses[lang][d.getMonth()]} ${d.getFullYear()}`;
