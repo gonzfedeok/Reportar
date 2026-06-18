@@ -475,7 +475,7 @@
             <h3><i class="ti ti-user-plus"></i> Agregar colaborador</h3>
             <input type="text" id="new-colab-email" placeholder="Email del colaborador"/>
             <input type="password" id="new-colab-pass" placeholder="Contraseña temporal"/>
-            <button class="btn-crear-admin" onclick="crearColaborador()"><i class="ti ti-plus" style="margin-right:6px"></i>Agregar colaborador</button>
+          <button type="button" class="btn-crear-admin" onclick="crearColaborador()"><i class="ti ti-plus" style="margin-right:6px"></i>Agregar colaborador</button>
           </div>
         </div>
         <p id="colab-no-perms" style="display:none;font-size:13px;color:var(--text2);text-align:center;padding:20px;background:var(--bg2);border-radius:var(--radius);"><i class="ti ti-lock" style="margin-right:6px"></i>No tienes permisos para gestionar colaboradores</p>
@@ -491,7 +491,7 @@
   </footer>
 </div>
 
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+<button type="button" class="lightbox-close" onclick="closeLightbox()"><i class="ti ti-x"></i></button>
   <button class="lightbox-close" onclick="closeLightbox()"><i class="ti ti-x"></i></button>
   <img id="lightbox-img" src="" alt="imagen ampliada"/>
 </div>
@@ -554,6 +554,7 @@ function setLang(lang,el){
   const t=i18n[lang];
   document.querySelectorAll('[data-i18n]').forEach(el=>{ const k=el.getAttribute('data-i18n'); if(t[k]) el.textContent=t[k]; });
   updateFecha();
+updateHora();
 }
 
 // ─── NAV ───
