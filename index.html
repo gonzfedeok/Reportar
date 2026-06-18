@@ -91,13 +91,13 @@
     .field input,.field select,.field textarea{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;color:var(--text);background:var(--bg);transition:all 0.15s;}
     .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--azul2);background:#fff;}
     .field textarea{height:72px;resize:none;}
-    .field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235a6478' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;background-size:16px;padding-right:32px;-webkit-appearance:none;appearance:none;}
+    .field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235a6478' stroke-width='2'%3E%3Cpolygon points='6 9 12 15 18 9'%3E%3C/polygon%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:30px;appearance:none;}
 
     /* MEDIA */
     .media-upload-box{border:1.5px dashed var(--border);border-radius:var(--radius-sm);padding:14px 10px;background:var(--bg3);margin-bottom:12px;}
     .media-upload-label{font-size:11px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;}
     .media-upload-row{display:flex;gap:8px;}
-    .media-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;padding:10px 6px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg2);cursor:pointer;font-size:12px;font-weight:600;transition:all 0.15s;}
+    .media-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;padding:10px 6px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg2);cursor:pointer;transition:all 0.15s;}
     .media-btn:hover{border-color:var(--azul2);color:var(--azul2);}
     .media-btn i{font-size:22px;}
     .media-btn input{display:none;}
@@ -156,7 +156,7 @@
     .btn-rechazar{flex:1;padding:8px;background:#FDEAEA;color:#A32D2D;border:1px solid #F09595;border-radius:var(--radius-sm);font-size:12px;font-weight:600;cursor:pointer;min-width:70px;}
     .btn-word{flex:1;padding:8px;background:#EAF2FB;color:var(--azul2);border:1px solid #b3d0ef;border-radius:var(--radius-sm);font-size:12px;font-weight:600;cursor:pointer;min-width:70px;}
     .admin-tabs{display:flex;gap:8px;margin-bottom:14px;}
-    .admin-tab{flex:1;padding:9px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:12px;font-weight:600;cursor:pointer;background:var(--bg3);color:var(--text2);text-align:center;transition:all 0.15s;}
+    .admin-tab{flex:1;padding:9px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:12px;font-weight:600;cursor:pointer;background:var(--bg3);color:var(--text2);text-align:center;}
     .admin-tab.active{background:var(--azul);color:#fff;border-color:var(--azul);}
 
     /* COLABORADORES */
@@ -185,7 +185,7 @@
 
     footer{background:var(--azul);color:rgba(255,255,255,0.7);text-align:center;padding:14px 16px;font-size:11px;line-height:1.7;margin-top:auto;}
     footer strong{color:#fff;}
-    .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--azul);color:#fff;padding:10px 22px;border-radius:24px;font-size:13px;font-weight:500;display:none;z-index:10000;}
+    .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--azul);color:#fff;padding:10px 22px;border-radius:24px;font-size:13px;font-weight:500;display:none;z-index:1000;}
 
     @media(max-width:420px){
       .header-title h1{font-size:19px;}
@@ -246,11 +246,11 @@
     <!-- FORM AUTOMOTOR -->
     <div class="form-container active" id="form-automotor">
       <div class="form-header fh-automotor">
-  <i class="ti ti-car"></i>
-  <span data-i18n="form_auto">Modo Automotor</span>
-</div>
+        <i class="ti ti-car"></i>
+        <span data-i18n="form_auto">Modo Automotor</span>
+      </div>
       <div class="field"><label data-i18n="lbl_suceso">Suceso</label><select><option value="">Seleccioná...</option><option>Accidente</option><option>Incidente</option><option>Emergencia</option><option>Otro</option></select></div>
-      <div class="field"><label data-i18n="lbl_tipo">Tipo de suceso</label><select><option value="">A confirmar</option><option>Choque frontal</option><option>Choque lateral</option><option>Choque trasero</option><option>Volcamiento</option><option>Incendio</option></select></div>
+      <div class="field"><label data-i18n="lbl_tipo">Tipo de suceso</label><select><option value="">A confirmar</option><option>Choque frontal</option><option>Choque lateral</option><option>Choque trasero</option><option>Volcamiento</option><option>Salida de ruta</option></select></div>
       <div class="field"><label>Fecha</label><input type="date" id="auto-fecha"/></div>
       <div class="field"><label>Hora (ARG)</label><input type="time"/></div>
       <div class="field"><label>Lugar del suceso</label><input type="text" id="auto-lugar" placeholder="Dirección/Km, barrio/ciudad (Provincia)"/></div>
@@ -259,12 +259,12 @@
         <div id="vehiculos-list">
           <div class="vehiculo-row" style="display:flex;gap:8px;margin-bottom:6px;">
             <select style="flex:1;padding:9px 10px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;background:var(--bg);-webkit-appearance:none;">
-              <option value="">Tipo...</option><option>Automóvil</option><option>Camioneta</option><option>Camión</option><option>Motocicleta</option><option>Bicicleta</option><option>Colectivo</option>
+              <option value="">Tipo...</option><option>Automóvil</option><option>Camioneta</option><option>Camión</option><option>Motocicleta</option><option>Bicicleta</option><option>Colectivo</option><option>Otro</option>
             </select>
             <input type="text" placeholder="Patente" style="width:110px;padding:9px 10px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;background:var(--bg);"/>
           </div>
         </div>
-<button type="button" onclick="agregarVehiculo()" style="font-size:12px;color:var(--azul2);background:none;border:1px dashed var(--azul2);border-radius:var(--radius-sm);padding:6px 12px;cursor:pointer;">+ Agregar vehículo</button>
+        <button type="button" onclick="agregarVehiculo()" style="font-size:12px;color:var(--azul2);background:none;border:1px dashed var(--azul2);border-radius:var(--radius-sm);padding:6px 12px;cursor:pointer;">+ Agregar vehículo</button>
       </div>
       <div class="field"><label>Heridos</label><select><option>No reportados</option><option>A confirmar</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5 o más</option></select></div>
       <div class="field"><label>Fallecidos</label><select><option>No reportados</option><option>A confirmar</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5 o más</option></select></div>
@@ -286,12 +286,12 @@
     <div class="form-container" id="form-aeronautico">
       <div class="form-header fh-aeronautico"><i class="ti ti-plane"></i><span>Modo Aeronáutico</span></div>
       <div class="field"><label>Suceso</label><select><option value="">Seleccioná...</option><option>Accidente</option><option>Incidente</option><option>Emergencia</option><option>Otro</option></select></div>
-      <div class="field"><label>Tipo de suceso</label><select><option value="">A confirmar</option><option>Colisión en vuelo</option><option>Colisión con tierra (CFIT)</option><option>Aterrizaje fallido</option><option>Pérdida de motor</option></select></div>
+      <div class="field"><label>Tipo de suceso</label><select><option value="">A confirmar</option><option>Colisión en vuelo</option><option>Colisión con tierra (CFIT)</option><option>Aterrizaje fallido</option><option>Fuego en vuelo</option><option>Despresurización</option></select></div>
       <div class="field"><label>Fecha</label><input type="date" id="aero-fecha"/></div>
       <div class="field"><label>Hora (ARG)</label><input type="time"/></div>
       <div class="field"><label>Lugar del suceso</label><input type="text" id="aero-lugar" placeholder="Dirección/Km, barrio/ciudad (Provincia)"/></div>
       <div class="field"><label>Forma de notificación</label><select><option>Web</option><option>WhatsApp</option><option>Llamada</option><option>Otro</option></select></div>
-      <div class="field"><label>Aeronave (Tipo)</label><select><option value="">Seleccioná...</option><option>Avión comercial</option><option>Avión de carga</option><option>Avioneta</option><option>Helicóptero</option></select></div>
+      <div class="field"><label>Aeronave (Tipo)</label><select><option value="">Seleccioná...</option><option>Avión comercial</option><option>Avión de carga</option><option>Avioneta</option><option>Helicóptero</option><option>Drone</option></select></div>
       <div class="field"><label>Matrícula</label><input type="text" placeholder="LV-XXX"/></div>
       <div class="field"><label>Operador (Línea aérea)</label><input type="text" placeholder="Nombre de la línea aérea u operador"/></div>
       <div class="field"><label>Heridos</label><select><option>No reportados</option><option>A confirmar</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5 o más</option></select></div>
@@ -307,13 +307,14 @@
         <div class="media-preview" id="prev-aero"></div>
         <div class="gps-result" id="gps-aero"></div>
       </div>
-<button type="button" class="submit-btn sub-aeronautico" onclick="enviar('aeronautico','aero-lugar','aero-resena')"><i class="ti ti-send" style="margin-right:6px"></i>Enviar denuncia</button>    </div>
+      <button type="button" class="submit-btn sub-aeronautico" onclick="enviar('aeronautico','aero-lugar','aero-resena')"><i class="ti ti-send" style="margin-right:6px"></i>Enviar denuncia</button>
+    </div>
 
     <!-- FORM MARITIMO -->
     <div class="form-container" id="form-maritimo">
       <div class="form-header fh-maritimo"><i class="ti ti-anchor"></i><span>Modo Marítimo / Fluvial / Lacustre</span></div>
-      <div class="field"><label>Suceso</label><select><option value="">Seleccioná...</option><option>Accidente</option><option>Incidente</option><option>Emergencia</option><option>Naufragio</option></select></div>
-      <div class="field"><label>Tipo de suceso</label><select><option value="">A confirmar</option><option>Colisión entre embarcaciones</option><option>Colisión con objeto fijo</option><option>Naufragio</option><option>Incendio</option></select></div>
+      <div class="field"><label>Suceso</label><select><option value="">Seleccioná...</option><option>Accidente</option><option>Incidente</option><option>Emergencia</option><option>Naufragio</option><option>Otro</option></select></div>
+      <div class="field"><label>Tipo de suceso</label><select><option value="">A confirmar</option><option>Colisión entre embarcaciones</option><option>Colisión con objeto fijo</option><option>Naufragio</option><option>Incendio</option><option>Fuga de carga</option></select></div>
       <div class="field"><label>Fecha</label><input type="date" id="mar-fecha"/></div>
       <div class="field"><label>Hora (ARG)</label><input type="time"/></div>
       <div class="field"><label>Lugar del suceso</label><input type="text" id="mar-lugar" placeholder="Dirección/Km, barrio/ciudad (Provincia) / Millas Náuticas"/></div>
@@ -334,20 +335,21 @@
         <div class="media-preview" id="prev-mar"></div>
         <div class="gps-result" id="gps-mar"></div>
       </div>
-<button type="button" class="submit-btn sub-maritimo" onclick="enviar('maritimo','mar-lugar','mar-resena')"><i class="ti ti-send" style="margin-right:6px"></i>Enviar denuncia</button>    </div>
+      <button type="button" class="submit-btn sub-maritimo" onclick="enviar('maritimo','mar-lugar','mar-resena')"><i class="ti ti-send" style="margin-right:6px"></i>Enviar denuncia</button>
+    </div>
 
     <!-- FORM FERROVIARIO -->
     <div class="form-container" id="form-ferroviario">
       <div class="form-header fh-ferroviario"><i class="ti ti-train"></i><span>Modo Ferroviario</span></div>
       <div class="field"><label>Suceso</label><select><option value="">Seleccioná...</option><option>Accidente</option><option>Incidente</option><option>Demora</option><option>Otro</option></select></div>
-      <div class="field"><label>Tipo de suceso</label><select><option value="">A confirmar</option><option>Choque</option><option>Descarrilamiento</option><option>Atropello</option><option>Incendio</option></select></div>
+      <div class="field"><label>Tipo de suceso</label><select><option value="">A confirmar</option><option>Choque</option><option>Descarrilamiento</option><option>Atropello</option><option>Incendio</option><option>Fuga de carga</option></select></div>
       <div class="field"><label>Fecha</label><input type="date" id="ferro-fecha"/></div>
       <div class="field"><label>Hora (ARG)</label><input type="time"/></div>
       <div class="field"><label>Lugar del suceso</label><input type="text" id="ferro-lugar" placeholder="Dirección/Km, barrio/ciudad (Provincia)"/></div>
       <div class="field"><label>Forma de notificación</label><select><option>Web</option><option>WhatsApp</option><option>Llamada</option><option>Otro</option></select></div>
       <div class="field"><label>Tren N°</label><input type="text" placeholder="Número del tren"/></div>
       <div class="field"><label>Locomotora</label><input type="text" placeholder="A confirmar"/></div>
-      <div class="field"><label>Operadora</label><select><option value="">Seleccioná...</option><option>SOF. SA.</option><option>Ferrovias</option><option>Metrovias S.A.C.</option><option>BCyL</option></select></div>
+      <div class="field"><label>Operadora</label><select><option value="">Seleccioná...</option><option>SOF. SA.</option><option>Ferrovias</option><option>Metrovias S.A.C.</option><option>BCyL</option><option>Otra</option></select></div>
       <div class="field"><label>Línea</label><select><option value="">Seleccioná...</option><option>San Martín</option><option>Belgrano</option><option>Urquiza</option><option>Roca</option><option>Mitre</option></select></div>
       <div class="field"><label>Heridos</label><select><option>No reportados</option><option>A confirmar</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5 o más</option></select></div>
       <div class="field"><label>Reseña</label><textarea id="ferro-resena" placeholder="Indicá lo sucedido en pocas palabras..."></textarea></div>
@@ -361,7 +363,7 @@
         <div class="media-preview" id="prev-ferro"></div>
         <div class="gps-result" id="gps-ferro"></div>
       </div>
-<button type="button" class="submit-btn sub-ferroviario" onclick="enviar('ferroviario','ferro-lugar','ferro-resena')"><i class="ti ti-send" style="margin-right:6px"></i>Enviar denuncia</button> 
+      <button type="button" class="submit-btn sub-ferroviario" onclick="enviar('ferroviario','ferro-lugar','ferro-resena')"><i class="ti ti-send" style="margin-right:6px"></i>Enviar denuncia</button>
     </div>
   </div>
 
@@ -405,8 +407,8 @@
       <div class="qr-url">reportar.netlify.app</div>
       <div class="qr-phone"><i class="ti ti-phone"></i> 0800-333-0689</div>
       <div class="qr-options">
-<button type="button" class="qr-opt" onclick="copiarLink()"><i class="ti ti-copy"></i> Copiar</button>
-<button type="button" class="qr-opt" onclick="compartirWsp()"><i class="ti ti-brand-whatsapp"></i> WhatsApp</button>
+        <button type="button" class="qr-opt" onclick="copiarLink()"><i class="ti ti-copy"></i> Copiar</button>
+        <button type="button" class="qr-opt" onclick="compartirWsp()"><i class="ti ti-brand-whatsapp"></i> WhatsApp</button>
         <button type="button" class="qr-opt" onclick="descargarQR()"><i class="ti ti-download"></i> Descargar QR</button>
       </div>
     </div>
@@ -424,7 +426,7 @@
     </div>
     <div id="admin-panel" style="display:none">
       <div class="admin-tabs">
-       <button type="button" class="admin-tab active" onclick="showAdminTab('sucesos',this)"><i class="ti ti-list"></i> Sucesos</button>
+        <button type="button" class="admin-tab active" onclick="showAdminTab('sucesos',this)"><i class="ti ti-list"></i> Sucesos</button>
         <button class="admin-tab" onclick="showAdminTab('colaboradores',this)" id="btn-tab-colab"><i class="ti ti-users"></i> Colaboradores</button>
       </div>
       <div id="atab-sucesos">
@@ -476,7 +478,7 @@
             <button class="btn-crear-admin" onclick="crearColaborador()"><i class="ti ti-plus" style="margin-right:6px"></i>Agregar colaborador</button>
           </div>
         </div>
-        <p id="colab-no-perms" style="display:none;font-size:13px;color:var(--text2);text-align:center;padding:20px;background:var(--bg2);border-radius:var(--radius);"><i class="ti ti-lock" style="margin-right:6px"></i>Solo el Admin Principal puede agregar colaboradores.</p>
+        <p id="colab-no-perms" style="display:none;font-size:13px;color:var(--text2);text-align:center;padding:20px;background:var(--bg2);border-radius:var(--radius);"><i class="ti ti-lock" style="margin-right:6px"></i>No tienes permisos para gestionar colaboradores</p>
         <div id="colab-list"></div>
       </div>
     </div>
@@ -500,7 +502,7 @@
 const EJS_SERVICE  = 'service_av9tqtj';
 const EJS_TEMPLATE = 'template_ktwnl6q';
 const EJS_PUBKEY   = 'EuBrPvcqqfnALwst6';
-const ADMIN_PRINCIPAL_EMAIL = 'reporttarok@gmail.com';
+const ADMIN_PRINCIPAL_EMAIL = 'reportarok@outlook.com';
 const ADMIN_PRINCIPAL_PASS  = 'ReportAR2026!';
 
 emailjs.init(EJS_PUBKEY);
@@ -517,10 +519,7 @@ function updateFecha() {
   const d = new Date();
   const dias = {es:['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'],en:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],fr:['Dim','Lun','Mar','Mer','Jeu','Ven','Sam']};
   const meses = {es:['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],en:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],fr:['Jan','Fév','Mar','Avr','Mai','Jun','Jul','Aoû','Sep','Oct','Nov','Déc']};
-const lang = currentLang || 'es'
-  (typeof currentLang !== 'undefined')
- ? currentLang
- : 'es';
+  const lang = (typeof currentLang !== 'undefined') ? currentLang : 'es';
   document.getElementById('fechaHoy').textContent = `${dias[lang][d.getDay()]} ${d.getDate()} ${meses[lang][d.getMonth()]} ${d.getFullYear()}`;
 }
 
@@ -532,49 +531,20 @@ function updateHora() {
 
 // ─── IDIOMAS ───
 const i18n = {
-  es:{subtitle:'Plataforma de denuncia ciudadana de sucesos',nav_report:'Denunciar',nav_feed:'Sucesos',btn_wsp:'WhatsApp',select_mode:'Seleccioná el modo del suceso:',cat_auto:'Automotor',cat_auto_sub:'Accidentes viales',cat_aero:'Aeronáutico',cat_aero_sub:'Accidentes aéreos',cat_mar:'Marítimo / Fluvial',cat_mar_sub:'Embarcaciones',cat_ferro:'Ferroviario',cat_ferro_sub:'Trenes',feed_notice:'Solo se muestran denuncias aprobadas por moderadores.',qr_desc:'Escaneá el QR o compartí el link para denunciar desde tu celular.',footer_disclaimer:'Página no oficial, a fines estadísticos.',footer_thanks:'Gracias por su colaboración.,form_auto:'Modo Automotor',
-lbl_suceso:'Suceso',
-lbl_tipo:'Tipo de suceso''},
-  en:{subtitle:'Citizens incident reporting platform',nav_report:'Report',nav_feed:'Incidents',btn_wsp:'WhatsApp',select_mode:'Select incident mode:',cat_auto:'Road',cat_auto_sub:'Road accidents',cat_aero:'Aeronautical',cat_aero_sub:'Flight accidents',cat_mar:'Maritime',cat_mar_sub:'Vessels',cat_ferro:'Railway',cat_ferro_sub:'Trains',feed_notice:'Only approved incidents are displayed.',qr_desc:'Scan the QR or share the link to report from your phone.',footer_disclaimer:'Unofficial page for statistical purposes.',footer_thanks:'Thank you for your collaboration.,form_auto:'Road Mode',
-lbl_suceso:'Incident',
-lbl_tipo:'Incident Type''},
-  fr:{subtitle:"Plateforme citoyenne de signalement d'incidents",nav_report:'Signaler',nav_feed:'Incidents',btn_wsp:'WhatsApp',select_mode:"Sélectionnez le mode:",cat_auto:'Automobile',cat_auto_sub:'Accidents routiers',cat_aero:'Aéronautique',cat_aero_sub:'Accidents aériens',cat_mar:'Maritime',cat_mar_sub:'Navires',cat_ferro:'Ferroviaire',cat_ferro_sub:'Trains',feed_notice:'Seuls les incidents approuvés sont affichés.',qr_desc:'Scannez le QR ou partagez le lien pour signaler.',footer_disclaimer:'Page non officielle à fins statistiques.',footer_thanks:'Merci de votre collaboration.,form_auto:'Mode Routier',
-lbl_suceso:'Incident',
-lbl_tipo:"Type d'incident"'}
+  es:{subtitle:'Plataforma de denuncia ciudadana de sucesos',nav_report:'Denunciar',nav_feed:'Sucesos',btn_wsp:'WhatsApp',select_mode:'Seleccioná el modo del suceso:',cat_auto:'Automotor',cat_auto_sub:'Accidentes viales',cat_aero:'Aeronáutico',cat_aero_sub:'Accidentes aéreos',cat_mar:'Marítimo / Fluvial',cat_mar_sub:'Embarcaciones',cat_ferro:'Ferroviario',cat_ferro_sub:'Trenes',form_auto:'Modo Automotor',lbl_suceso:'Suceso',lbl_tipo:'Tipo de suceso',feed_notice:'Solo se muestran denuncias aprobadas por moderadores.',qr_desc:'Escaneá el QR o compartí el link para denunciar desde tu celular.',footer_disclaimer:'Página no oficial, a fines estadísticos.',footer_thanks:'Gracias por su colaboración.'},
+  en:{subtitle:'Citizens incident reporting platform',nav_report:'Report',nav_feed:'Incidents',btn_wsp:'WhatsApp',select_mode:'Select incident mode:',cat_auto:'Road',cat_auto_sub:'Road accidents',cat_aero:'Aeronautical',cat_aero_sub:'Air accidents',cat_mar:'Maritime / Fluvial',cat_mar_sub:'Vessels',cat_ferro:'Railway',cat_ferro_sub:'Trains',form_auto:'Road Mode',lbl_suceso:'Incident',lbl_tipo:'Incident Type',feed_notice:'Only incidents approved by moderators are shown.',qr_desc:'Scan the QR or share the link to report from your phone.',footer_disclaimer:'Unofficial page, for statistical purposes.',footer_thanks:'Thank you for your collaboration.'},
+  fr:{subtitle:"Plateforme citoyenne de signalement d'incidents",nav_report:'Signaler',nav_feed:'Incidents',btn_wsp:'WhatsApp',select_mode:"Sélectionnez le mode:",cat_auto:'Automobile',cat_auto_sub:"Accidents de route",cat_aero:'Aéronautique',cat_aero_sub:'Accidents aériens',cat_mar:'Maritime / Fluvial',cat_mar_sub:'Navires',cat_ferro:'Ferroviaire',cat_ferro_sub:'Trains',form_auto:'Mode Automobile',lbl_suceso:'Incident',lbl_tipo:"Type d'incident",feed_notice:'Seuls les incidents approuvés par les modérateurs sont affichés.',qr_desc:'Scannez le QR ou partagez le lien pour signaler depuis votre téléphone.',footer_disclaimer:'Page non officielle, à titre statistique.',footer_thanks:'Merci pour votre collaboration.'}
 };
 let currentLang='es';
-function updateFecha() {
-  const d = new Date();
 
-  const dias = {
-    es:['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'],
-    en:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
-    fr:['Dim','Lun','Mar','Mer','Jeu','Ven','Sam']
-  };
-
-  const meses = {
-    es:['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
-    en:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
-    fr:['Jan','Fév','Mar','Avr','Mai','Jun','Jul','Aoû','Sep','Oct','Nov','Déc']
-  };
-
-  const lang =
-    (typeof currentLang !== 'undefined')
-      ? currentLang
-      : 'es';
-
-  const fecha = document.getElementById('fechaHoy');
-
-  if(fecha){
-    fecha.textContent =
-      `${dias[lang][d.getDay()]} ${d.getDate()} ${meses[lang][d.getMonth()]} ${d.getFullYear()}`;
-  }
-};
+updateFecha();
 updateHora();
 setInterval(updateFecha, 60000);
 setInterval(updateHora, 1000);
+
 function toggleLangMenu(){ document.getElementById('langMenu').classList.toggle('open'); }
 document.addEventListener('click',e=>{ if(!e.target.closest('.lang-btn')&&!e.target.closest('.lang-menu')) document.getElementById('langMenu').classList.remove('open'); });
+
 function setLang(lang,el){
   currentLang=lang;
   document.getElementById('langLabel').textContent=lang.toUpperCase();
@@ -609,7 +579,7 @@ function agregarVehiculo(){
   const div=document.createElement('div');
   div.className='vehiculo-row';
   div.style.cssText='display:flex;gap:8px;margin-bottom:6px;';
-  div.innerHTML=`<select style="flex:1;padding:9px 10px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;background:var(--bg);-webkit-appearance:none;"><option value="">Tipo...</option><option>Automóvil</option><option>Camioneta</option><option>Camión</option><option>Motocicleta</option><option>Bicicleta</option><option>Colectivo</option></select><input type="text" placeholder="Patente" style="width:110px;padding:9px 10px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;background:var(--bg);"/><button onclick="this.parentNode.remove()" style="background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:var(--radius-sm);cursor:pointer;">✕</button>`;
+  div.innerHTML=`<select style="flex:1;padding:9px 10px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;background:var(--bg);-webkit-appearance:none;"><option value="">Tipo...</option><option>Automóvil</option><option>Camioneta</option><option>Camión</option><option>Motocicleta</option><option>Bicicleta</option><option>Colectivo</option></select><input type="text" placeholder="Patente" style="width:110px;padding:9px 10px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;background:var(--bg);"/>`;
   list.appendChild(div);
 }
 
@@ -618,7 +588,7 @@ function previewMedia(input,previewId){
   const preview=document.getElementById(previewId);
   Array.from(input.files).forEach(file=>{
     if(file.type.startsWith('image/')){const img=document.createElement('img');img.className='media-thumb';img.src=URL.createObjectURL(file);preview.appendChild(img);}
-    else if(file.type.startsWith('video/')){const div=document.createElement('div');div.style.cssText='width:56px;height:56px;background:#1a2744;border-radius:6px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);';div.innerHTML='<i class="ti ti-player-play" style="color:#fff;font-size:20px;"></i>';preview.appendChild(div);}
+    else if(file.type.startsWith('video/')){const div=document.createElement('div');div.style.cssText='width:56px;height:56px;background:#1a2744;border-radius:6px;display:flex;align-items:center;justify-content:center;';div.innerHTML='<i class="ti ti-player-play" style="color:#fff;font-size:28px;"></i>';preview.appendChild(div);}
   });
 }
 
@@ -710,7 +680,7 @@ function renderColabList(){
     const d=document.createElement('div');
     d.className='colab-item';
     const canDelete = currentUser&&currentUser.rol==='principal';
-    d.innerHTML=`<span><i class="ti ti-user" style="margin-right:6px"></i>${email}</span><div style="display:flex;gap:4px;align-items:center;"><span class="role-badge role-colab">Colaborador</span>${canDelete?`<button class="btn-eliminar-colab" onclick="eliminarColab('${email}')">Eliminar</button>`:''}`;
+    d.innerHTML=`<span><i class="ti ti-user" style="margin-right:6px"></i>${email}</span><div style="display:flex;gap:4px;align-items:center;"><span class="role-badge role-colab">Colaborador</span>${canDelete?`<button class="btn-eliminar-colab" onclick="eliminarColab('${email}')"><i class="ti ti-trash" style="margin-right:2px"></i>Eliminar</button>`:''}`;
     list.appendChild(d);
   });
 }
@@ -746,13 +716,13 @@ function descargarWord(modo,cardId){
   const loc=card.querySelector('.d-loc').textContent.trim();
   const hoy=new Date().toLocaleDateString('es-AR');
   const fichas={
-    automotor:`MODO: AUTOMOTOR\nSUCESO: Accidente\nFECHA: ${hoy}\nLUGAR: ${loc}\nFORMA DE NOTIFICACIÓN: Web\nVEHÍCULO/S: A confirmar\nDOMINIO/S: A confirmar\nHERIDOS: A confirmar\nFALLECIDOS: No\n\nRESENIA:\n${texto}`,
-    aeronautico:`MODO: AERONÁUTICO\nSUCESO: Accidente\nFECHA: ${hoy}\nLUGAR: ${loc}\nFORMA DE NOTIFICACIÓN: Web\nAERONAVE: A confirmar\nMATRÍCULA: A confirmar\nOPERADOR: A confirmar\nHERIDOS: A confirmar\nFALLECIDOS: No\n\nRESENIA:\n${texto}`,
-    maritimo:`MODO: MARÍTIMO / FLUVIAL / LACUSTRE\nSUCESO: Accidente\nFECHA: ${hoy}\nLUGAR: ${loc}\nFORMA DE NOTIFICACIÓN: Web\nBUQUE: A confirmar\nN° OMI: A confirmar\nBANDERA: A confirmar\nHERIDOS: A confirmar\nFALLECIDOS: No\n\nRESENIA:\n${texto}`,
-    ferroviario:`MODO: FERROVIARIO\nSUCESO: Accidente\nFECHA: ${hoy}\nLUGAR: ${loc}\nFORMA DE NOTIFICACIÓN: Web\nTREN N°: A confirmar\nLOCOMOTORA: A confirmar\nOPERADORA: A confirmar\nLÍNEA: A confirmar\nHERIDOS: A confirmar\n\nRESENIA:\n${texto}`
+    automotor:`MODO: AUTOMOTOR\nSUCESO: Accidente\nFECHA: ${hoy}\nLUGAR: ${loc}\nFORMA DE NOTIFICACIÓN: Web\nVEHÍCULO/S: A confirmar\nDOMINIO/S: A confirmar\nHERIDOS: A confirmar\nFALLECIDOS: No\nRESEÑA: ${texto}`,
+    aeronautico:`MODO: AERONÁUTICO\nSUCESO: Accidente\nFECHA: ${hoy}\nLUGAR: ${loc}\nFORMA DE NOTIFICACIÓN: Web\nAERONAVE: A confirmar\nMATRÍCULA: A confirmar\nOPERADOR: A confirmar\nHERIDOS: A confirmar\nFALLECIDOS: No\nRESEÑA: ${texto}`,
+    maritimo:`MODO: MARÍTIMO / FLUVIAL / LACUSTRE\nSUCESO: Accidente\nFECHA: ${hoy}\nLUGAR: ${loc}\nFORMA DE NOTIFICACIÓN: Web\nBUQUE: A confirmar\nN° OMI: A confirmar\nBANDERA: A confirmar\nHERIDOS: A confirmar\nFALLECIDOS: No\nRESEÑA: ${texto}`,
+    ferroviario:`MODO: FERROVIARIO\nSUCESO: Accidente\nFECHA: ${hoy}\nLUGAR: ${loc}\nFORMA DE NOTIFICACIÓN: Web\nTREN N°: A confirmar\nLOCOMOTORA: A confirmar\nOPERADORA: A confirmar\nLÍNEA: A confirmar\nHERIDOS: A confirmar\nRESEÑA: ${texto}`
   };
   const contenido=fichas[modo]||fichas.automotor;
-  const html=`<html><head><meta charset='UTF-8'></head><body style='font-family:Arial;font-size:14px;line-height:2;padding:40px;'><h2 style='color:#1a2744;border-bottom:2px solid #1a2744;padding-bottom:10px;'>ReportAR - Ficha de ${modo}</h2><pre style='white-space:pre-wrap;font-family:Arial;'>${contenido}</pre></body></html>`;
+  const html=`<html><head><meta charset='UTF-8'></head><body style='font-family:Arial;font-size:14px;line-height:2;padding:40px;'><h2 style='color:#1a2744;border-bottom:2px solid #1a2744;padding-bottom:10px;'>ReportAR - Ficha de ${modo.toUpperCase()}</h2><pre style='white-space:pre-wrap;word-wrap:break-word;'>${contenido}</pre></body></html>`;
   const blob=new Blob([html],{type:'application/msword'});
   const url=URL.createObjectURL(blob);
   const a=document.createElement('a');
