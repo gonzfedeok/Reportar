@@ -222,7 +222,7 @@
   <nav class="nav">
     <button class="active" onclick="showTab('denunciar',this)"><i class="ti ti-plus"></i><span data-i18n="nav_report">Denunciar</span></button>
     <button onclick="showTab('feed',this)"><i class="ti ti-news"></i><span data-i18n="nav_feed">Sucesos</span></button>
-    <button onclick="showTab('qr',this)"><i class="ti ti-qrcode"></i><span>QR</span></button>
+    
     <button onclick="showTab('admin',this)"><i class="ti ti-shield-lock"></i><span>Admin</span></button>
   </nav>
 
@@ -399,19 +399,7 @@
     </div>
   </div>
 
-  <!-- QR -->
-  <div id="tab-qr" class="section">
-    <div class="qr-box">
-      <h3><i class="ti ti-qrcode" style="margin-right:6px"></i>Compartir ReportAR</h3>
-      <p data-i18n="qr_desc">Escaneá el QR o compartí el link para denunciar desde tu celular.</p>
-      <div class="qr-inner"><div id="qrCanvas"></div></div>
-      <div class="qr-url">reportar.netlify.app</div>
-      <div class="qr-phone"><i class="ti ti-phone"></i> 0800-333-0689</div>
-      <div class="qr-options">
-        <button type="button" class="qr-opt" onclick="JSTLink()"> <i class="ti ti-external-link"></i> JST </button>
-        <button type="button" class="qr-opt" onclick="compartirWsp()"><i class="ti ti-brand-whatsapp"></i> WhatsApp</button>
-        <button type="button" class="qr-opt" onclick="descargarQR()"><i class="ti ti-download"></i> Descargar QR</button>
-      </div>
+    
     </div>
   </div>
 
