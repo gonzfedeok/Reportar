@@ -746,8 +746,9 @@ function renderQR(){
       correctLevel:QRCode.CorrectLevel.H
     });
     qrRendered=true;
-  }catch(e){}
-}
+  }catch(e){
+    alert(e);
+  }
 function JSTLink(){window.open('https://www.argentina.gob.ar/jst','_blank');}
 function compartirWsp(){window.open('https://wa.me/?text=Denunciá%20en%20ReportAR%3A%20https%3A%2F%2Freportar.netlify.app','_blank');}
 function descargarQR(){const canvas=document.querySelector('#qrCanvas canvas');if(!canvas)return;const a=document.createElement('a');a.download='ReportAR-QR.png';a.href=canvas.toDataURL();a.click();}
