@@ -736,7 +736,17 @@ function descargarWord(modo,cardId){
 let qrRendered=false;
 function renderQR(){
   if(qrRendered)return;
-  try{new QRCode(document.getElementById('qrCanvas'),{text:'https://reportar.netlify.app',width:160,height:160,colorDark:'#1a2744',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.H});qrRendered=true;}catch(e){}
+  try{
+    new QRCode(document.getElementById('headerQR'),{
+      text:'https://wa.me/5491139267174',
+      width:70,
+      height:70,
+      colorDark:'#1a2744',
+      colorLight:'#ffffff',
+      correctLevel:QRCode.CorrectLevel.H
+    });
+    qrRendered=true;
+  }catch(e){}
 }
 function JSTLink(){window.open('https://www.argentina.gob.ar/jst','_blank');}
 function compartirWsp(){window.open('https://wa.me/?text=Denunciá%20en%20ReportAR%3A%20https%3A%2F%2Freportar.netlify.app','_blank');}
