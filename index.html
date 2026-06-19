@@ -24,9 +24,9 @@
     .app-shell{max-width:600px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;}
 
     /* HEADER */
-    .header{background:var(--azul);color:#fff;padding:14px 16px 12px;position:sticky;top:0;z-index:100;box-shadow:var(--shadow);}
-    .header-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;}
-    .header-title{text-align:center;flex:1;}
+    {background:var(--azul);color:#fff;padding:14px 16px 12px;position:sticky;top:0;z-index:100;box-shadow:var(--shadow);}
+    -top{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;}
+    -title{text-align:center;flex:1;}
     .header-title h1{font-size:24px;font-weight:700;letter-spacing:1px;}
     .header-title p{font-size:11px;opacity:0.7;margin-top:2px;}
     .header-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px;min-width:95px;}
@@ -188,7 +188,7 @@
     .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--azul);color:#fff;padding:10px 22px;border-radius:24px;font-size:13px;font-weight:500;display:none;z-index:1000;}
 
     @media(max-width:420px){
-      .header-title h1{font-size:19px;}
+      -title h1{font-size:19px;}
       .cats{gap:8px;}
       .contact-btn{font-size:11px;}
       .qr-options,.admin-actions{flex-direction:column;}
@@ -200,7 +200,7 @@
 
   <div class="header">
     <div class="header-top">
-      <div id="headerQR" style="width:80px;height:80px;background:#fff;padding:6px;border-radius:8px;display:flex;align-items:center;justify-content:center;"></div>
+      <div id="headerQR" style="width:120px;height:120px;background:#fff;padding:6px;border-radius:8px;display:flex;align-items:center;justify-content:center;"></div>
       <div class="header-title">
         <h1><i class="ti ti-alert-triangle"></i> ReportAR</h1>
         <p data-i18n="subtitle">Plataforma de denuncia ciudadana de sucesos</p>
@@ -733,8 +733,8 @@ function renderQR(){
   try{
     new QRCode(document.getElementById('headerQR'),{
       text:'https://wa.me/5491139267174?text=Hola%2C%20quiero%20hacer%20la%20denuncia%20de%20un%20Suceso',
-      width:70,
-      height:70,
+      width:110,
+      height:110,
       colorDark:'#1a2744',
       colorLight:'#ffffff',
       correctLevel:QRCode.CorrectLevel.H
