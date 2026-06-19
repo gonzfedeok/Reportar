@@ -200,7 +200,7 @@
 
   <div class="header">
     <div class="header-top">
-      <div id="headerQR" style="width:70px;height:70px;background:#fff;padding:4px;border-radius:8px;"></div>
+      <div id="headerQR" style="width:78px;height:78px;background:#fff;padding:4px;border-radius:8px;display:flex;align-items:center;justify-content:center;"></div>
       <div class="header-title">
         <h1><i class="ti ti-alert-triangle"></i> ReportAR</h1>
         <p data-i18n="subtitle">Plataforma de denuncia ciudadana de sucesos</p>
@@ -738,7 +738,7 @@ function renderQR(){
   if(qrRendered)return;
   try{
     new QRCode(document.getElementById('headerQR'),{
-      text:'https://wa.me/5491139267174',
+      text:'https://wa.me/5491139267174?text=Hola,%20quiero%20hacer%20la%20denuncia%20de%20un%20suceso.',
       width:70,
       height:70,
       colorDark:'#1a2744',
