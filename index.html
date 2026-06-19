@@ -541,7 +541,7 @@ updateFecha();
 updateHora();
 setInterval(updateFecha, 60000);
 setInterval(updateHora, 1000);
-
+renderQR();
 function toggleLangMenu(){ document.getElementById('langMenu').classList.toggle('open'); }
 document.addEventListener('click',e=>{ if(!e.target.closest('.lang-btn')&&!e.target.closest('.lang-menu')) document.getElementById('langMenu').classList.remove('open'); });
 
