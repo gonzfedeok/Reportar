@@ -682,16 +682,21 @@ card.innerHTML = `
   </div>
 
   <div class="admin-actions">
-    <button class="btn-aprobar"
-      onclick="moderar('denuncia_${i}','aprobado')">
-      Aprobar
-    </button>
+  <button class="btn-aprobar"
+    onclick="moderar('denuncia_${i}','aprobado')">
+    Aprobar
+  </button>
 
-    <button class="btn-rechazar"
-      onclick="moderar('denuncia_${i}','rechazado')">
-      Rechazar
-    </button>
-  </div>
+  <button class="btn-rechazar"
+    onclick="moderar('denuncia_${i}','rechazado')">
+    Rechazar
+  </button>
+
+  <button class="btn-word"
+    onclick="descargarWord('${d.modo}','denuncia_${i}')">
+    Word
+  </button>
+</div>
 `;
 
 contenedor.appendChild(card);
