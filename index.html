@@ -809,6 +809,8 @@ denunciasPendientes.push({
   fecha: hoy,
   estado: "pendiente"
 });
+  renderDenunciasPendientes();
+  
 console.log("DENUNCIAS:", denunciasPendientes);
   // Destinatarios: admin principal + colaboradores activos
   const destinatarios = [ADMIN_PRINCIPAL_EMAIL, ...colaboradoresEmails];
