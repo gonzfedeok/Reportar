@@ -643,6 +643,62 @@ let usuarios = {
 };
 let colaboradoresEmails = [];
 let currentUser = null;
+let denunciasPendientes = [];
+  function renderDenunciasPendientes(){
+
+const contenedor = document.getElementById('atab-sucesos');
+
+denunciasPendientes.forEach((d,i)=>{
+
+```
+if(document.getElementById('denuncia_'+i)) return;
+
+const card = document.createElement('div');
+
+card.className = 'admin-card';
+card.id = 'denuncia_'+i;
+
+card.innerHTML = `
+  <div class="d-header">
+    <div class="d-cat">
+      ${d.modo.toUpperCase()}
+    </div>
+    <span class="badge pendiente">Pendiente</span>
+  </div>
+
+  <div class="d-meta">
+    ${d.fecha}
+  </div>
+
+  <div class="d-texto">
+    ${d.resena}
+  </div>
+
+  <div class="d-footer">
+    <span class="d-loc">
+      <i class="ti ti-map-pin"></i>
+      ${d.lugar}
+    </span>
+  </div>
+
+  <div class="admin-actions">
+    <button class="btn-aprobar"
+      onclick="moderar('denuncia_${i}','aprobado')">
+      Aprobar
+    </button>
+
+    <button class="btn-rechazar"
+      onclick="moderar('denuncia_${i}','rechazado')">
+      Rechazar
+    </button>
+  </div>
+`;
+
+contenedor.appendChild(card);
+```
+
+});
+}
 
 // ─── FECHA Y HORA ───
 function updateFecha() {
@@ -781,7 +837,10 @@ function loginAdmin(){
     document.getElementById('admin-login-panel').style.display='none';
     document.getElementById('admin-panel').style.display='block';
     renderColabList();
-  } else { showToast('⚠️ Usuario o contraseña incorrectos'); }
+    renderDenunciasPendientes();
+  } else { 
+    showToast('⚠️ Usuario o contraseña incorrectos');
+  }
 }
 
 // ─── ADMIN TABS ───
