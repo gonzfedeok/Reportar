@@ -912,7 +912,44 @@ function moderar(id,estado){
   const acts=card.querySelector('.admin-actions');
   if(acts){const ba=acts.querySelector('.btn-aprobar');const br=acts.querySelector('.btn-rechazar');if(ba)ba.remove();if(br)br.remove();}
   pend=Math.max(0,pend-1);
-  if(estado==='aprobado')apro++;else rech++;
+  if(estado==='aprobado'){
+
+  apro++;
+
+  const texto = card.querySelector('.d-texto').innerHTML;
+  const lugar = card.querySelector('.d-loc').innerHTML;
+  const categoria = card.querySelector('.d-cat').innerHTML;
+
+  const feed = document.getElementById('tab-feed');
+
+  const nuevaDenuncia = document.createElement('div');
+  nuevaDenuncia.className = 'denuncia-card';
+
+  nuevaDenuncia.innerHTML = `
+    <div class="d-header">
+      <div class="d-cat">${categoria}</div>
+      <span class="badge aprobado">Aprobado</span>
+    </div>
+
+    <div class="d-meta">
+      ${new Date().toLocaleDateString('es-AR')} · Moderado
+    </div>
+
+    <div class="d-texto">
+      ${texto}
+    </div>
+
+    <div class="d-footer">
+      <span class="d-loc">${lugar}</span>
+    </div>
+  `;
+
+  feed.appendChild(nuevaDenuncia);
+
+}else{
+  rech++;
+}
+  
   document.getElementById('st-pend').textContent=pend;
   document.getElementById('st-apro').textContent=apro;
   document.getElementById('st-rech').textContent=rech;
