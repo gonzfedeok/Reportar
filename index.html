@@ -408,8 +408,8 @@
         </div>
         <button type="button" onclick="agregarVehiculo()" style="font-size:12px;color:var(--azul2);background:none;border:1px dashed var(--azul2);border-radius:var(--radius-sm);padding:6px 12px;cursor:pointer;">+ Agregar vehículo</button>
       </div>
-      <div class="field"><label>Heridos</label><select><option>No reportados</option><option>A confirmar</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5 o más</option></select></div>
-      <div class="field"><label>Fallecidos</label><select><option>No reportados</option><option>A confirmar</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5 o más</option></select></div>
+      <div class="field"><label>Heridos</label><select id="auto-heridos"><option>No reportados</option><option>A confirmar</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5 o más</option></select></div>
+      <div class="field"><label>Fallecidos</label><select id="auto-fallecidos"><option>No reportados</option><option>A confirmar</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5 o más</option></select></div>
       <div class="field"><label>Reseña</label><textarea id="auto-resena" placeholder="Indicá lo sucedido en pocas palabras..."></textarea></div>
       <div class="media-upload-box">
         <div class="media-upload-label">Adjuntar evidencia</div>
@@ -975,12 +975,25 @@ function descargarWord(modo,cardId){
   const loc=card.querySelector('.d-loc').textContent.trim();
 const hoy=new Date().toLocaleDateString('es-AR');
 
+  const heridos = document.getElementById('auto-heridos')?.value || 'A confirmar';
+ const fallecidos = document.getElementById('auto-fallecidos')?.value || 'A confirmar';
+  
 const aeronave = document.getElementById('aero-aeronave')?.value || 'A confirmar';
 const matricula = document.getElementById('aero-matricula')?.value || 'A confirmar';
 const operador = document.getElementById('aero-operador')?.value || 'A confirmar';
 
 const fichas={
-    automotor:`MODO: AUTOMOTOR\nSUCESO: Accidente\nFECHA: ${hoy}\nLUGAR: ${loc}\nFORMA DE NOTIFICACIÓN: Web\nVEHÍCULO/S: A confirmar\nDOMINIO/S: A confirmar\nHERIDOS: A confirmar\nFALLECIDOS: No\nRESEÑA: ${texto}`,
+automotor:`MODO: AUTOMOTOR
+SUCESO: Accidente
+FECHA: ${hoy}
+LUGAR: ${loc}
+FORMA DE NOTIFICACIÓN: Web
+VEHÍCULO/S: A confirmar
+DOMINIO/S: A confirmar
+HERIDOS: ${heridos}
+FALLECIDOS: ${fallecidos}
+RESEÑA: ${texto}`,
+  
 aeronautico:`MODO: AERONÁUTICO
 SUCESO: Accidente
 FECHA: ${hoy}
@@ -991,7 +1004,8 @@ MATRÍCULA: ${matricula}
 OPERADOR: ${operador}
 HERIDOS: A confirmar
 FALLECIDOS: No
-RESEÑA: ${texto}`,    
+RESEÑA: ${texto}`,   
+  
     maritimo:`MODO: MARÍTIMO / FLUVIAL / LACUSTRE\nSUCESO: Accidente\nFECHA: ${hoy}\nLUGAR: ${loc}\nFORMA DE NOTIFICACIÓN: Web\nBUQUE: A confirmar\nN° OMI: A confirmar\nBANDERA: A confirmar\nHERIDOS: A confirmar\nFALLECIDOS: No\nRESEÑA: ${texto}`,
     ferroviario:`MODO: FERROVIARIO\nSUCESO: Accidente\nFECHA: ${hoy}\nLUGAR: ${loc}\nFORMA DE NOTIFICACIÓN: Web\nTREN N°: A confirmar\nLOCOMOTORA: A confirmar\nOPERADORA: A confirmar\nLÍNEA: A confirmar\nHERIDOS: A confirmar\nRESEÑA: ${texto}`
   };
