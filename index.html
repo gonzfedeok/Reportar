@@ -1003,6 +1003,14 @@ const aeronave = document.getElementById('aero-aeronave')?.value || 'A confirmar
 const matricula = document.getElementById('aero-matricula')?.value || 'A confirmar';
 const operador = document.getElementById('aero-operador')?.value || 'A confirmar';
 
+const tren = document.getElementById('ferro-tren')?.value || 'A confirmar';
+const locomotora = document.getElementById('ferro-locomotora')?.value || 'A confirmar';
+const operadora = document.getElementById('ferro-operadora')?.value || 'A confirmar';
+const linea = document.getElementById('ferro-linea')?.value || 'A confirmar';
+const ferroHeridos = document.getElementById('ferro-heridos')?.value || 'A confirmar';
+const ferroFallecidos = document.getElementById('ferro-fallecidos')?.value || 'A confirmar';
+  
+
 const fichas={
 automotor:`MODO: AUTOMOTOR
 SUCESO: Accidente
@@ -1028,8 +1036,20 @@ FALLECIDOS: No
 RESEÑA: ${texto}`,   
   
     maritimo:`MODO: MARÍTIMO / FLUVIAL / LACUSTRE\nSUCESO: Accidente\nFECHA: ${hoy}\nLUGAR: ${loc}\nFORMA DE NOTIFICACIÓN: Web\nBUQUE: A confirmar\nN° OMI: A confirmar\nBANDERA: A confirmar\nHERIDOS: A confirmar\nFALLECIDOS: No\nRESEÑA: ${texto}`,
-    ferroviario:`MODO: FERROVIARIO\nSUCESO: Accidente\nFECHA: ${hoy}\nLUGAR: ${loc}\nFORMA DE NOTIFICACIÓN: Web\nTREN N°: A confirmar\nLOCOMOTORA: A confirmar\nOPERADORA: A confirmar\nLÍNEA: A confirmar\nHERIDOS: A confirmar\nRESEÑA: ${texto}`
-  };
+  
+ferroviario:`MODO: FERROVIARIO
+SUCESO: Accidente
+FECHA: ${hoy}
+LUGAR: ${loc}
+FORMA DE NOTIFICACIÓN: Web
+TREN N°: ${tren}
+LOCOMOTORA: ${locomotora}
+OPERADORA: ${operadora}
+LÍNEA: ${linea}
+HERIDOS: ${ferroHeridos}
+FALLECIDOS: ${ferroFallecidos}
+RESEÑA: ${texto}`  };
+  
   const contenido=fichas[modo]||fichas.automotor;
   const html=`<html><head><meta charset='UTF-8'></head><body style='font-family:Arial;font-size:14px;line-height:2;padding:40px;'><h2 style='color:#1a2744;border-bottom:2px solid #1a2744;padding-bottom:10px;'>ReportAR - Ficha de ${modo.toUpperCase()}</h2><pre style='white-space:pre-wrap;word-wrap:break-word;'>${contenido}</pre></body></html>`;
   const blob=new Blob([html],{type:'application/msword'});
