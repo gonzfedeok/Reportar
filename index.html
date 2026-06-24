@@ -977,6 +977,9 @@ const hoy=new Date().toLocaleDateString('es-AR');
 
   const heridos = document.getElementById('auto-heridos')?.value || 'A confirmar';
  const fallecidos = document.getElementById('auto-fallecidos')?.value || 'A confirmar';
+const vehiculo = document.getElementById('auto-vehiculo')?.value || 'A confirmar';
+const patente = document.getElementById('auto-patente')?.value || 'A confirmar';
+  
   
 const aeronave = document.getElementById('aero-aeronave')?.value || 'A confirmar';
 const matricula = document.getElementById('aero-matricula')?.value || 'A confirmar';
@@ -988,8 +991,8 @@ SUCESO: Accidente
 FECHA: ${hoy}
 LUGAR: ${loc}
 FORMA DE NOTIFICACIÓN: Web
-VEHÍCULO/S: A confirmar
-DOMINIO/S: A confirmar
+VEHÍCULO/S: ${vehiculo}
+DOMINIO/S: ${patente}
 HERIDOS: ${heridos}
 FALLECIDOS: ${fallecidos}
 RESEÑA: ${texto}`,
