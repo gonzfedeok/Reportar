@@ -400,10 +400,10 @@
       <div class="field"><label>Vehículo/s involucrado/s</label>
         <div id="vehiculos-list">
           <div class="vehiculo-row" style="display:flex;gap:8px;margin-bottom:6px;">
-            <select style="flex:1;padding:9px 10px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;background:var(--bg);-webkit-appearance:none;">
+            <select id="auto-vehiculo" style="flex:1;padding:9px 10px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;background:var(--bg);-webkit-appearance:none;">
               <option value="">Tipo...</option><option>Automóvil</option><option>Camioneta</option><option>Camión</option><option>Motocicleta</option><option>Bicicleta</option><option>Colectivo</option><option>Otro</option>
             </select>
-            <input type="text" placeholder="Patente" style="width:110px;padding:9px 10px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;background:var(--bg);"/>
+            <input id="auto-patente" type="text" placeholder="Patente" style="width:110px;padding:9px 10px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;background:var(--bg);"/>
           </div>
         </div>
         <button type="button" onclick="agregarVehiculo()" style="font-size:12px;color:var(--azul2);background:none;border:1px dashed var(--azul2);border-radius:var(--radius-sm);padding:6px 12px;cursor:pointer;">+ Agregar vehículo</button>
