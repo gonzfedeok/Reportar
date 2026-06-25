@@ -448,7 +448,8 @@
 </div>
 <div class="field"><label>Operador (Línea aérea)</label><input type="text" id="aero-operador" placeholder="Nombre de la línea aérea u operador"/>
 </div>
-      <div class="field"><label>Heridos</label><select><option>No reportados</option><option>A confirmar</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5 o más</option></select></div>
+<div class="field"><label>Heridos</label><select id="mar-heridos"><option>No reportados</option><option>A confirmar</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5 o más</option></select></div>
+      
       <div class="field"><label>Fallecidos</label><select><option>No</option><option>A confirmar</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5 o más</option></select></div>
       <div class="field"><label>Reseña</label><textarea id="aero-resena" placeholder="Indicá lo sucedido en pocas palabras..."></textarea></div>
       <div class="media-upload-box">
@@ -473,12 +474,25 @@
       <div class="field"><label>Hora (ARG)</label><input type="time"/></div>
       <div class="field"><label>Lugar del suceso</label><input type="text" id="mar-lugar" placeholder="Dirección/Km, barrio/ciudad (Provincia) / Millas Náuticas"/></div>
       <div class="field"><label>Forma de notificación</label><select><option>Web</option><option>WhatsApp</option><option>Llamada</option><option>Otro</option></select></div>
-      <div class="field"><label>Buque (Nombre de la embarcación)</label><input type="text" placeholder="Nombre de la embarcación"/></div>
-      <div class="field"><label>N° OMI</label><input type="text" placeholder="A confirmar"/></div>
-      <div class="field"><label>Bandera (País)</label><input type="text" placeholder="País de bandera"/></div>
-      <div class="field"><label>Heridos</label><select><option>No reportados</option><option>A confirmar</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5 o más</option></select></div>
-      <div class="field"><label>Fallecidos</label><select><option>No</option><option>A confirmar</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5 o más</option></select></div>
-      <div class="field"><label>Reseña</label><textarea id="mar-resena" placeholder="Indicá lo sucedido en pocas palabras..."></textarea></div>
+
+      <div class="field">
+  <label>Buque (Nombre de la embarcación)</label>
+  <input type="text" id="mar-buque" placeholder="Nombre de la embarcación"/>
+</div>
+
+<div class="field">
+  <label>N° OMI</label>
+  <input type="text" id="mar-omi" placeholder="A confirmar"/>
+</div>
+
+<div class="field">
+  <label>Bandera (País)</label>
+  <input type="text" id="mar-bandera" placeholder="País de bandera"/>
+</div>
+      
+<div class="field"><label>Heridos</label><select id="mar-heridos"><option>No reportados</option><option>A confirmar</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5 o más</option></select></div>
+      <div class="field"><label>Fallecidos</label><select id="mar-fallecidos"><option>No</option><option>A confirmar</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5 o más</option></select></div>
+        <div class="field"><label>Reseña</label><textarea id="mar-resena" placeholder="Indicá lo sucedido en pocas palabras..."></textarea></div>
       <div class="media-upload-box">
         <div class="media-upload-label">Adjuntar evidencia</div>
         <div class="media-upload-row">
