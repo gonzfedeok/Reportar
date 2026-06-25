@@ -1023,7 +1023,13 @@ const operadora = document.getElementById('ferro-operadora')?.value || 'A confir
 const linea = document.getElementById('ferro-linea')?.value || 'A confirmar';
 const ferroHeridos = document.getElementById('ferro-heridos')?.value || 'A confirmar';
 const ferroFallecidos = document.getElementById('ferro-fallecidos')?.value || 'A confirmar';
-  
+
+const buque = document.getElementById('mar-buque')?.value || 'A confirmar';
+const omi = document.getElementById('mar-omi')?.value || 'A confirmar';
+const bandera = document.getElementById('mar-bandera')?.value || 'A confirmar';
+const marHeridos = document.getElementById('mar-heridos')?.value || 'A confirmar';
+const marFallecidos = document.getElementById('mar-fallecidos')?.value || 'A confirmar';
+
 
 const fichas={
 automotor:`MODO: AUTOMOTOR
@@ -1049,7 +1055,17 @@ HERIDOS: A confirmar
 FALLECIDOS: No
 RESEÑA: ${texto}`,   
   
-    maritimo:`MODO: MARÍTIMO / FLUVIAL / LACUSTRE\nSUCESO: Accidente\nFECHA: ${hoy}\nLUGAR: ${loc}\nFORMA DE NOTIFICACIÓN: Web\nBUQUE: A confirmar\nN° OMI: A confirmar\nBANDERA: A confirmar\nHERIDOS: A confirmar\nFALLECIDOS: No\nRESEÑA: ${texto}`,
+maritimo:`MODO: MARÍTIMO / FLUVIAL / LACUSTRE
+SUCESO: Accidente
+FECHA: ${hoy}
+LUGAR: ${loc}
+FORMA DE NOTIFICACIÓN: Web
+BUQUE: ${buque}
+N° OMI: ${omi}
+BANDERA: ${bandera}
+HERIDOS: ${marHeridos}
+FALLECIDOS: ${marFallecidos}
+RESEÑA: ${texto}`,
   
 ferroviario:`MODO: FERROVIARIO
 SUCESO: Accidente
