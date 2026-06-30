@@ -880,12 +880,13 @@ console.log("DENUNCIAS:", denunciasPendientes);
 
   destinatarios.forEach(email => {
     emailjs.send(EJS_SERVICE, EJS_TEMPLATE, {
-      to_email: email,
-      modo: modo.charAt(0).toUpperCase()+modo.slice(1),
-      lugar: lugar,
-      resena: resena,
-      fecha: hoy,
-      reply_to: 'noreply@reportar.app'
+  to_email: email,
+  modo: modo.charAt(0).toUpperCase() + modo.slice(1),
+  ubicacion: lugar,
+  mensaje: resena,
+  fecha: hoy,
+  reply_to: 'noreply@reportar.app'
+})
     }).catch(()=>{});
   });
 
