@@ -862,32 +862,34 @@ function getGPS(resultId){
 
 // ─── ENVIAR DENUNCIA + EMAIL ───
 function enviar(modo,lugarId,resenaId){
-  const lugar = document.getElementById(lugarId)?document.getElementById(lugarId).value||'No especificado':'No especificado';
-  const resena = document.getElementById(resenaId)?document.getElementById(resenaId).value||'Sin reseña':'Sin reseña';
+  const lugar = document.getElementById(lugarId) ? document.getElementById(lugarId).value || 'No especificado' : 'No especificado';
+  const resena = document.getElementById(resenaId) ? document.getElementById(resenaId).value || 'Sin reseña' : 'Sin reseña';
   const hoy = new Date().toLocaleDateString('es-AR');
-denunciasPendientes.push({
-  modo: modo,
-  lugar: lugar,
-  resena: resena,
-  fecha: hoy,
-  estado: "pendiente"
-});
+
+  denunciasPendientes.push({
+    modo: modo,
+    lugar: lugar,
+    resena: resena,
+    fecha: hoy,
+    estado: "pendiente"
+  });
+
   renderDenunciasPendientes();
-  
-console.log("DENUNCIAS:", denunciasPendientes);
+
+  console.log("DENUNCIAS:", denunciasPendientes);
+
   // Destinatarios: admin principal + colaboradores activos
   const destinatarios = [ADMIN_PRINCIPAL_EMAIL, ...colaboradoresEmails];
 
   destinatarios.forEach(email => {
     emailjs.send(EJS_SERVICE, EJS_TEMPLATE, {
-  to_email: email,
-  modo: modo.charAt(0).toUpperCase() + modo.slice(1),
-  ubicacion: lugar,
-  mensaje: resena,
-  fecha: hoy,
-  reply_to: 'noreply@reportar.app'
-})
-    }).catch(()=>{});
+      to_email: email,
+      modo: modo.charAt(0).toUpperCase() + modo.slice(1),
+      ubicacion: lugar,
+      mensaje: resena,
+      fecha: hoy,
+      reply_to: 'noreply@reportar.app'
+    }).catch(() => {});
   });
 
   showToast('✓ Gracias por su colaboración. La denuncia fue enviada y será revisada por un moderador.');
