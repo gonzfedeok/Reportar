@@ -883,13 +883,13 @@ function enviar(modo,lugarId,resenaId){
 
   destinatarios.forEach(email => {
   emailjs.send(EJS_SERVICE, EJS_TEMPLATE, {
-    to_email: email,
-    modo: modo.charAt(0).toUpperCase() + modo.slice(1),
-    ubicacion: lugar,
-    mensaje: resena,
-    fecha: hoy,
-    reply_to: 'noreply@reportar.app'
-  });
+  to_email: email,
+  modo: modo.charAt(0).toUpperCase() + modo.slice(1),
+  ubicacion: lugar,
+  mensaje: resena,
+  fecha: hoy,
+  reply_to: 'noreply@reportar.app'
+});
 });
 
   showToast('✓ Gracias por su colaboración. La denuncia fue enviada y será revisada por un moderador.');
