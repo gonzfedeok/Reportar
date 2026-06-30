@@ -889,6 +889,12 @@ function enviar(modo,lugarId,resenaId){
   mensaje: resena,
   fecha: hoy,
   reply_to: 'noreply@reportar.app'
+})
+.then(response => {
+  console.log("EMAIL ENVIADO:", response);
+})
+.catch(error => {
+  console.error("ERROR EMAILJS:", error);
 });
 });
 
